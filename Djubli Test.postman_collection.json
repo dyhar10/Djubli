@@ -1,0 +1,1060 @@
+{
+	"info": {
+		"_postman_id": "2a3139ed-4c63-44b6-bf59-34b902af868d",
+		"name": "Djubli Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13962593"
+	},
+	"item": [
+		{
+			"name": "Leasing",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1ODIxLCJpYXQiOjE2NzcyODk0MjF9.LRkMb-Mq1FGFiRMFE7HINket-04zKCtvABIX_T9GCkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/leasing?page=1&perPage=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"leasing"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1ODIxLCJpYXQiOjE2NzcyODk0MjF9.LRkMb-Mq1FGFiRMFE7HINket-04zKCtvABIX_T9GCkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/leasing/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"leasing",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "LEA00001"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/leasing/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"leasing",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "LEA00001"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b6-KMorkNjV7BQ7eNzi3Aj07cGWpts\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 02:14:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"SUCCESS\",\n    \"data\": {\n        \"leasingId\": \"LEA00001\",\n        \"leasingName\": \"Clipan Finance\",\n        \"rates\": 11,\n        \"term\": null,\n        \"createdAt\": \"2023-02-25T02:12:37.120Z\",\n        \"updatedAt\": \"2023-02-25T02:12:37.120Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1ODIxLCJpYXQiOjE2NzcyODk0MjF9.LRkMb-Mq1FGFiRMFE7HINket-04zKCtvABIX_T9GCkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"leasingName\": \"SMS Finance\",\n    \"rates\": 12,\n    \"terms\": 48\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/leasing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"leasing"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"leasingName\": \"BFI\",\n    \"rates\": 15,\n    \"terms\": 60\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/leasing",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"leasing"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-k6O+KWpqjiVBDKha+6rQw/imIXo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 02:24:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"INSERTED\",\n    \"data\": {\n        \"leasingName\": \"BFI\",\n        \"rates\": 15,\n        \"terms\": 60,\n        \"leasingId\": \"LEA00002\",\n        \"updatedAt\": \"2023-02-25T02:24:37.463Z\",\n        \"createdAt\": \"2023-02-25T02:24:37.463Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Detiani Nanda Sari\",\n    \"phone\": \"082128567687\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/customer/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Detiani Nanda Sari\",\n    \"phone\": \"082128567687\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "339"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"153-I3qSasxinahcXpzmOtR7aoEQOnI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 01:39:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"INSERTED\",\n    \"data\": {\n        \"uuid\": \"503e41f2-5a22-4263-97e1-18aac1e93db4\",\n        \"name\": \"Detiani Nanda Sari\",\n        \"phone\": \"082128567687\",\n        \"password\": \"$2b$10$9T2NFv5YNuQRCT52rocjROmAU1TaC/O0VkLGIr0ZIBSlEreOegl7i\",\n        \"customerId\": \"CUST00002\",\n        \"isActive\": 1,\n        \"updatedAt\": \"2023-02-25T01:39:12.225Z\",\n        \"createdAt\": \"2023-02-25T01:39:12.225Z\",\n        \"isLogin\": 0,\n        \"balance\": 0\n    }\n}"
+						},
+						{
+							"name": "Error Number Unique Validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Detiani Nanda Sari\",\n    \"phone\": \"082128567687\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"signup"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-nxEi8YSsvJ57vuShliISMb0tJJw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 01:39:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"ERROR\",\n    \"type\": \"BAD REQUEST\",\n    \"message\": \"Validation error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"082128567686\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/customer/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\": \"082128567686\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "305"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"131-XzrF/KaBSnV5ifDSzL3HKcp1vhI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 01:39:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"SUCCESS\",\n    \"data\": {\n        \"name\": \"Randy Hardianto\",\n        \"phone\": \"082128567686\",\n        \"balance\": 0,\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1NTkzLCJpYXQiOjE2NzcyODkxOTN9.gUAqVtcIKjCTlHnRJDlEG2c20HCfUcAmmuZ2cppBv6U\"\n    }\n}"
+						},
+						{
+							"name": "Validation already login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\": \"082128567686\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"58-UoHE8qo32VkT4E+yReQJiWyLVFk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 01:40:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"ERROR\",\n    \"type\": \"BAD REQUEST\",\n    \"message\": \"You're already logging in!\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Account not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\": \"082128567689\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-q0LURaufP8X9Vmp85bR7D5ySsSA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 01:40:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"ERROR\",\n    \"type\": \"BAD REQUEST\",\n    \"message\": \"Account not found!\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Password incorrect",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\": \"082128567686\",\n    \"password\": \"123465\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-c1xpOegWxxNtK6Eg39kI7CeUP3M\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 01:41:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"ERROR\",\n    \"type\": \"BAD REQUEST\",\n    \"message\": \"Password is incorrect\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1NTkzLCJpYXQiOjE2NzcyODkxOTN9.gUAqVtcIKjCTlHnRJDlEG2c20HCfUcAmmuZ2cppBv6U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"082128567686\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/customer/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"customer",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\": \"082128567686\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"90-0+08yKHEexEDjs6/x+fYa9Xa/40\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 01:43:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"SUCCESS\",\n    \"message\": \"Thankyou Randy Hardianto, See you next time!\",\n    \"data\": {\n        \"name\": \"Randy Hardianto\",\n        \"phone\": \"082128567686\",\n        \"balance\": 0\n    }\n}"
+						},
+						{
+							"name": "Validation not login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\": \"082128567686\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/customer/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"customer",
+										"logout"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-A1o2l4GklFGDtdbBFCxxnbveGEM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Feb 2023 01:43:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"ERROR\",\n    \"type\": \"BAD REQUEST\",\n    \"message\": \"You're not logging in!\",\n    \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Loan",
+			"item": [
+				{
+					"name": "Create Invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1ODIxLCJpYXQiOjE2NzcyODk0MjF9.LRkMb-Mq1FGFiRMFE7HINket-04zKCtvABIX_T9GCkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"downPayment\": 100000000,\n    \"carId\": \"CAR00002\",\n    \"leasingId\": \"LEA00001\",\n    \"customerId\": \"CUST00001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/loan/invoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"loan",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Invoice By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1ODIxLCJpYXQiOjE2NzcyODk0MjF9.LRkMb-Mq1FGFiRMFE7HINket-04zKCtvABIX_T9GCkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/loan/invoice/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"loan",
+								"invoice",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "INV00001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1ODIxLCJpYXQiOjE2NzcyODk0MjF9.LRkMb-Mq1FGFiRMFE7HINket-04zKCtvABIX_T9GCkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"invoiceId\": \"INV00001\",\n    \"customerId\": \"CUST00001\",\n    \"leasingId\": \"LEA00001\",\n    \"carId\": \"CAR00002\",\n    \"amountPaid\": 5000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/loan/transfer/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"loan",
+								"transfer",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "INV00001"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1ODIxLCJpYXQiOjE2NzcyODk0MjF9.LRkMb-Mq1FGFiRMFE7HINket-04zKCtvABIX_T9GCkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InV1aWQiOiIzYzIyYTNmOC0yMTFiLTQ3ODctOTllYS00ZjcxOWE5MDdlNDMifSwiZXhwIjoxNjc3Mzc1ODIxLCJpYXQiOjE2NzcyODk0MjF9.LRkMb-Mq1FGFiRMFE7HINket-04zKCtvABIX_T9GCkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandName\": \"Toyota\",\n    \"groupModelName\": \"Avanza\",\n    \"modelName\": \"1.3 E MT\",\n    \"year\": 2015,\n    \"price\": 165000000 \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"car"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -26,3 +26,5 @@ npm run dev
 Maka server akan running di port 3000
 
 _sesuaikan value_ __.env__ _yang dipakai_
+
+You can import the postman collaction 'Djubli Test.postman_collection.json' to run the API
